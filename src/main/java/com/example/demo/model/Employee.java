@@ -10,20 +10,29 @@ package com.example.demo.model;
  * @author TOSHIBA
  */
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@Table(name="empleado")
 public class Employee {
 
     @Id
     @GeneratedValue
     private Long id;
+    @NotNull
+    @Column(name="nombre")
     private String name;
+    @Column(name="apellido")
     private String lastName;
-    private boolean active;
+    @NotNull
+    @Column(name="estado")
+    private boolean status;
 
     public Employee() {
         super();
@@ -33,7 +42,7 @@ public class Employee {
         super();
         this.name = name;
         this.lastName = lastName;
-        this.active = active;
+        this.status = active;
     }
 
     public Long getId() {
@@ -60,11 +69,11 @@ public class Employee {
         this.lastName = lastName;
     }
 
-    public boolean isActive() {
-        return active;
+    public boolean isStatus() {
+        return status;
     }
 
-    public void setActive(boolean active) {
-        this.active = active;
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }
