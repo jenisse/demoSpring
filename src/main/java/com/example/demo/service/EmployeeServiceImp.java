@@ -39,5 +39,20 @@ public class EmployeeServiceImp implements EmployeeService {
     public List<Employee> getAllEmployees() {
         return employeeRepository.findAll();
     }
+    
+    @Override
+    public void addEmployee(Employee employee) {
+        employeeRepository.save(employee);
+    }
+    
+    @Override
+    public void deleteEmployee(long id) {
+        employeeRepository.deleteById(id);
+    }
+    
+    @Override
+    public void updateEmployee(Employee employee) {
+        employeeRepository.save(employee);
+    }
 
 }

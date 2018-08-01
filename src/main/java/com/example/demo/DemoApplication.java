@@ -19,14 +19,14 @@ public class DemoApplication {
         SpringApplication.run(DemoApplication.class, args);
     }
 
-    @Bean
-    public CommandLineRunner setup(EmployeeRepository employeeRepository) {
-        return (args) -> {
-            employeeRepository.save(new Employee("Oscar", "Castillo", true));
-            employeeRepository.save(new Employee("Michel", "Hinostroza", true));
-            employeeRepository.save(new Employee("Gustavo ", "Algo", false));
-            employeeRepository.save(new Employee("Abhi", "S.", true));
-            logger.info("Employees setup bean injected");
-        };
-    }
+//    @Bean
+//    public CommandLineRunner setup(EmployeeRepository employeeRepository) {
+//        return (args) -> {
+//            employeeRepository.save(new Employee("Oscar", "Castillo", true));
+//            employeeRepository.save(new Employee("Michel", "Hinostroza", true));
+//            employeeRepository.save(new Employee("Gustavo ", "Algo", false));
+//            employeeRepository.save(new Employee("Abhi", "S.", true));
+//            logger.info("Employees setup bean injected");
+//        };
+//    }
 }

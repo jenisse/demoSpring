@@ -14,4 +14,7 @@ import com.example.demo.model.Employee;
 public interface EmployeeService {
     Employee getEmployeeById(long id);
     List<Employee> getAllEmployees();
+    void addEmployee(Employee employee);
+    void deleteEmployee(long id);
+    void updateEmployee(Employee employee);
 }
